@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>编辑后台 · 落星的博客</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <div class="container wide header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-avatar" src="assets/avatar.jpg" alt="">
+        落星的博客 · 编辑后台
+      </a>
+      <nav class="nav">
+        <a href="index.html" target="_blank">查看网站 ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container wide">
+
+    <div class="admin-note">
+      ⚠️ <strong>注意：本站只有作者本人可以发布文章。</strong>
+      后台需要配置 GitHub 令牌（Token）才能读取和发布内容；不是作者的访客
+      即使打开本页面，也无法发布、修改或上传任何内容。
+    </div>
+
+    <!-- 配置 -->
+    <details class="cfg" id="cfgBox">
+      <summary>⚙️ 仓库与令牌设置（只需配置一次，保存在本机浏览器）</summary>
+      <div class="cfg-grid">
+        <label>GitHub 用户名 / 组织 <input id="cfgOwner" placeholder="yourname"></label>
+        <label>仓库名 <input id="cfgRepo" placeholder="my-blog"></label>
+        <label>分支 <input id="cfgBranch" placeholder="main"></label>
+        <label>data.js 路径 <input id="cfgPath" placeholder="assets/data.js"></label>
+        <label class="full">访问令牌 Token（细粒度，权限：该仓库 Contents 读写）
+          <input id="cfgToken" type="password" placeholder="github_pat_... 或 ghp_...">
+        </label>
+        <div class="full cfg-actions">
+          <button class="btn small" id="btnSaveCfg">保存设置</button>
+          <button class="btn ghost small" id="btnTest">测试连接</button>
+          <span class="hint">令牌只存在你本机浏览器 localStorage，不会上传到别处；请勿在共用电脑使用。</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- 工具栏 -->
+    <div class="toolbar">
+      <button class="btn ghost" id="btnLoad">⬇ 从 GitHub 读取</button>
+      <input id="commitMsg" class="commit-msg" placeholder="提交说明（可留空）">
+      <button class="btn" id="btnPublish">🚀 发布到 GitHub</button>
+      <span id="status" class="status"></span>
+    </div>
+
+    <!-- 标签 -->
+    <div class="tabs">
+      <button class="tab active" data-tab="posts">文章</button>
+      <button class="tab" data-tab="downloads">下载</button>
+    </div>
+
+    <!-- 文章 -->
+    <section class="tab-panel" id="tab-posts">
+      <div class="editor-grid">
+        <aside class="list-pane">
+          <button class="btn small block" id="btnNewPost">+ 新建文章</button>
+          <ul class="item-list" id="postList"></ul>
+        </aside>
+
+        <div class="form-pane">
+          <div class="row">
+            <label>标题 <input id="pTitle" placeholder="文章标题"></label>
+            <label>slug（网址标识，英文唯一）<input id="pSlug" placeholder="my-post"></label>
+          </div>
+          <div class="row">
+            <label>日期 <input id="pDate" placeholder="2026-10-15"></label>
+            <label>标签（逗号分隔）<input id="pTags" placeholder="教程,随笔"></label>
+          </div>
+          <label class="block">摘要（首页显示）<input id="pSummary" placeholder="一句话摘要"></label>
+
+          <label class="block">
+            正文
+            <div class="rte-toolbar">
+              <button data-cmd="bold" title="加粗"><b>B</b></button>
+              <button data-cmd="italic" title="斜体"><i>I</i></button>
+              <button data-cmd="insertUnorderedList" title="列表">• 列表</button>
+              <button data-cmd="formatBlock" data-val="h2" title="小标题">H2</button>
+              <button data-cmd="formatBlock" data-val="p" title="正文">正文</button>
+              <button data-cmd="link" title="链接">🔗</button>
+              <button data-cmd="code" title="代码块">&lt;/&gt;</button>
+              <button data-cmd="image" title="上传并插入图片">🖼 图片</button>
+            </div>
+            <div id="pContent" class="rte" contenteditable="true" spellcheck="false"></div>
+            <input type="file" id="pImage" accept="image/*" hidden>
+          </label>
+
+          <div class="row actions">
+            <button class="btn" id="btnSavePost">保存到草稿</button>
+            <button class="btn ghost danger" id="btnDeletePost">删除此文</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 下载 -->
+    <section class="tab-panel hidden" id="tab-downloads">
+      <div class="editor-grid">
+        <aside class="list-pane">
+          <button class="btn small block" id="btnNewDownload">+ 新建下载项</button>
+          <ul class="item-list" id="downloadList"></ul>
+        </aside>
+
+        <div class="form-pane">
+          <div class="row">
+            <label>名称 <input id="dName" placeholder="我的小工具 v1.0"></label>
+            <label>日期 <input id="dDate" placeholder="2026-10-15"></label>
+          </div>
+          <div class="row">
+            <label>大小（可选）<input id="dSize" placeholder="3.2 MB"></label>
+            <label class="grow">下载地址 / 文件路径 <input id="dUrl" placeholder="downloads/mytool.zip"></label>
+          </div>
+          <label class="block">说明 <input id="dDesc" placeholder="功能一句话说明"></label>
+
+          <div class="upload-box">
+            <div>📦 直接上传文件（会上传到仓库的 <code>downloads/</code> 目录，并自动填好上面的地址）</div>
+            <input type="file" id="dFile">
+          </div>
+
+          <div class="row actions">
+            <button class="btn" id="btnSaveDownload">保存到草稿</button>
+            <button class="btn ghost danger" id="btnDeleteDownload">删除此项</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="foot-note">
+      提示：编辑只改动浏览器里的草稿，点右上角「🚀 发布到 GitHub」才会真正写入仓库并触发网站更新。
+    </p>
+  </main>
+
+  <script src="assets/admin.js"></script>
+</body>
+</html>
