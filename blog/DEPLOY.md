@@ -16,8 +16,9 @@
    - 选 **Public**（公开）或 Private 都行
    - 点 **Create repository**
 3. 进入新仓库，点 **Add file → Upload files**。
-4. 打开 `C:\Users\Admin\Desktop\my-blog`，**全选里面的所有文件和文件夹**（`index.html`、`assets`、`downloads`、`post.html`、`downloads.html`、`about.html`、`admin.html`、`README.md`、`robots.txt` 等）→ 拖到网页上传区。
-   - ⚠️ 注意：拖的是 `my-blog` **里面的内容**，不是 `my-blog` 这个文件夹本身。上传后仓库根目录应能直接看到 `index.html`。
+4. 打开网站根目录 `C:\Users\Admin\Desktop\girls-last-tour-game`，**全选里面的所有文件和文件夹**（`index.html`、`assets`、`downloads`、`blog`、`robots.txt`、`wrangler.jsonc`）→ 拖到网页上传区。
+   - ⚠️ 注意：拖的是**网站根目录里面的内容**，不是文件夹本身。上传后仓库根目录应能直接看到 `index.html` 和 `blog`。
+   - 博客在 `blog/` 子目录里，所以下面第 3 步的 data.js 路径要填 **`blog/assets/data.js`**。
 5. 底部点 **Commit changes**。
 
 ### 建访问令牌（发布用）
@@ -64,7 +65,7 @@
 1. 访问 `https://你的网址/admin.html`。
 2. 展开顶部「仓库与令牌设置」，填入：
    - 用户名/组织、仓库名、分支（一般 `main`）
-   - data.js 路径：`assets/data.js`
+   - data.js 路径：`blog/assets/data.js`
    - 粘贴第一步生成的 Token
 3. 点 **保存设置** → 再点 **测试连接**，出现成功提示即可。
 4. 以后回到网站首页，点右上角 **✎ 写文章** 就能发文、插图、上传文件，最后点 **🚀 发布到 GitHub**，线上约 1 分钟自动更新。

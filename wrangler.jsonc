@@ -1,5 +1,7 @@
 {
-  "name": "meteor",
+  // Cloudflare Workers 静态资源部署配置
+  // 作用：把仓库根目录当作纯静态站点发布（无需构建）
+  "name": "luoxing-blog",
   "compatibility_date": "2025-01-01",
   "assets": {
     "directory": "."

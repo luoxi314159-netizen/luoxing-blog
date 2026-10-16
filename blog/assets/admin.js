@@ -123,7 +123,7 @@
     $("cfgOwner").value = cfg.owner || "";
     $("cfgRepo").value = cfg.repo || "";
     $("cfgBranch").value = cfg.branch || "main";
-    $("cfgPath").value = cfg.path || "assets/data.js";
+    $("cfgPath").value = cfg.path || "blog/assets/data.js";
     $("cfgToken").value = cfg.token || "";
   }
 
@@ -131,7 +131,7 @@
     cfg.owner = $("cfgOwner").value.trim();
     cfg.repo = $("cfgRepo").value.trim();
     cfg.branch = $("cfgBranch").value.trim() || "main";
-    cfg.path = $("cfgPath").value.trim() || "assets/data.js";
+    cfg.path = $("cfgPath").value.trim() || "blog/assets/data.js";
     cfg.token = $("cfgToken").value.trim();
     localStorage.setItem(LS_KEY, JSON.stringify(cfg));
     status("设置已保存到本机浏览器 ✓", "ok");
@@ -142,7 +142,7 @@
     try {
       assertCfg();
       status("正在测试…");
-      var f = await ghGet(cfg.path || "assets/data.js");
+      var f = await ghGet(cfg.path || "blog/assets/data.js");
       status(f ? "连接成功，已找到 " + cfg.path + " ✓" : "连接成功，但仓库里还没有 " + cfg.path + "（首次发布会自动创建）", "ok");
     } catch (e) { status(e.message, "err"); }
   }
@@ -153,7 +153,7 @@
     try {
       assertCfg();
       status("正在从 GitHub 读取…");
-      var f = await ghGet(cfg.path || "assets/data.js");
+      var f = await ghGet(cfg.path || "blog/assets/data.js");
       if (!f) {
         posts = []; downloads = [];
       } else {
@@ -171,7 +171,7 @@
     try {
       assertCfg();
       status("正在提交到 GitHub…");
-      var path = cfg.path || "assets/data.js";
+      var path = cfg.path || "blog/assets/data.js";
       var message = $("commitMsg").value.trim() || ("更新站点内容 " + today());
       var cur = await ghGet(path);
       var out = await ghPut(path, utf8ToBase64(generateDataJs()), message, cur ? cur.sha : undefined);
@@ -322,7 +322,7 @@
   async function uploadFile(file) {
     try {
       assertCfg();
-      var path = "downloads/" + file.name;
+      var path = "blog/downloads/" + file.name;
       status("正在上传 " + file.name + " …");
       var buf = await file.arrayBuffer();
       var cur = await ghGet(path);
@@ -364,7 +364,7 @@
         return;
       }
       var safe = file.name.replace(/[^\w.\-]+/g, "_");
-      var path = "assets/uploads/" + Date.now() + "-" + safe;
+      var path = "blog/assets/uploads/" + Date.now() + "-" + safe;
       status("正在上传图片 " + file.name + " …");
       var buf = await file.arrayBuffer();
       var cur = await ghGet(path);

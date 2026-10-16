@@ -3,55 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>落星的博客</title>
-<meta name="description" content="欢迎来到落星的博客，记录文章，也发布我做的东西。">
-<link rel="icon" href="assets/avatar.jpg">
+<title>少女终末旅行 · 同人游戏 | GirlsLastTour</title>
+<meta name="description" content="一款安静的废土旅行生存游戏：两个少女，一台履带摩托，在层叠废墟里找吃的、找火光、找答案。">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-page="home">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-avatar" src="assets/avatar.jpg" alt="">
-        落星的博客
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="active">文章</a>
-        <a href="downloads.html">下载</a>
-        <a href="about.html">关于</a>
-        <a href="admin.html" class="write-link">✎ 写文章</a>
-      </nav>
-    </div>
-  </header>
+<body>
 
-  <main class="container">
-    <section class="hero">
-      <img class="avatar" src="assets/avatar.jpg" alt="落星_meteor 的头像">
-      <div class="hero-text">
-        <h1>欢迎来到落星的博客</h1>
-        <p>我是 <span class="accent">落星_meteor</span>，这里记录我的文章与随笔，也发布我做的各种小东西，都可以直接下载。</p>
-        <div class="hero-actions">
-          <a class="btn" href="downloads.html">去下载 ↓</a>
-          <a class="btn ghost" href="about.html">关于我</a>
+<div class="snow" aria-hidden="true">
+  <span style="--x:4%;  --d:12s; --delay:0s"></span>
+  <span style="--x:11%; --d:16s; --delay:2s"></span>
+  <span style="--x:18%; --d:10s; --delay:5s"></span>
+  <span style="--x:26%; --d:14s; --delay:1s"></span>
+  <span style="--x:33%; --d:18s; --delay:7s"></span>
+  <span style="--x:41%; --d:11s; --delay:3s"></span>
+  <span style="--x:48%; --d:15s; --delay:9s"></span>
+  <span style="--x:56%; --d:13s; --delay:4s"></span>
+  <span style="--x:63%; --d:17s; --delay:6s"></span>
+  <span style="--x:71%; --d:12s; --delay:0.5s"></span>
+  <span style="--x:78%; --d:16s; --delay:8s"></span>
+  <span style="--x:86%; --d:10s; --delay:2.5s"></span>
+  <span style="--x:93%; --d:14s; --delay:5.5s"></span>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">◍</span>
+      少女终末旅行
+    </a>
+    <nav class="nav">
+      <a href="#about">简介</a>
+      <a href="#features">特色</a>
+      <a href="#shots">画面</a>
+      <a href="#roadmap">进度</a>
+      <a href="#changelog">更新</a>
+      <a href="#download" class="nav-dl">下载</a>
+      <a href="#join">加入</a>
+      <a href="blog/index.html">博客 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">GirlsLastTour · 同人游戏</p>
+      <p class="soon"><span class="dot"></span>暂未发行 · 开发中</p>
+      <h1>《少女终末旅行》</h1>
+      <p class="tagline">一款安静的废土旅行生存游戏 —— 两个少女，一台履带摩托，在层叠废墟里找吃的、找火光、找答案。</p>
+      <div class="hero-meta">
+        <span>类型 · 废土旅行 / 生存</span>
+        <span>平台 · PC · Windows</span>
+        <span>状态 · 暂未发行</span>
+      </div>
+      <div class="hero-actions">
+        <span class="btn is-disabled">暂未发行</span>
+        <a class="btn ghost" href="#about">了解详情</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 简介 -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <h2><span class="idx">01</span>简介</h2>
+      <div class="prose">
+        <p>一场早已结束的战争之后，文明化为层层叠叠的废墟。两位少女——千户与尤莉——驾驶着一辆履带摩托，在无尽的雪原上向上、向前，寻找食物、火光，以及一个也许并不存在的答案。</p>
+        <p>这不是一款关卡驱动的游戏，而是一段<strong>连续的旅行</strong>：世界是「一条路」的连续体，章节是城层的垂直剖面。没有任务列表，只有地图残页与方向；玩家可以任选一名少女作为主控，另一人在旅途中与你同行。</p>
+        <p>战斗并非核心——危险遗迹里堆着最肥的物资，也堆着失控的自律机器。「进去、找到、带出来」永远比硬打划算；这里惩罚的不是死亡，而是<strong>浪费与贪心</strong>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特色（四条设计支柱）-->
+  <section id="features" class="section">
+    <div class="wrap">
+      <h2><span class="idx">02</span>特色</h2>
+      <div class="grid features">
+        <article class="card">
+          <h3>旅行，而非关卡</h3>
+          <p>世界是一条路的连续体；章节 = 城层的垂直剖面。没有任务列表，只有地图残页和方向。</p>
+        </article>
+        <article class="card">
+          <h3>资源即节奏</h3>
+          <p>燃料、食物、热度构成「一天的预算」。不惩罚死亡，惩罚浪费与贪心。</p>
+        </article>
+        <article class="card">
+          <h3>两个人</h3>
+          <p>同伴既是机制也是情感：托举、拉绳、牵引、分工，还有夜晚的闲谈。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 画面 -->
+  <section id="shots" class="section">
+    <div class="wrap">
+      <h2><span class="idx">03</span>画面</h2>
+      <div class="grid shots">
+        <figure class="shot"><div class="ph">截图待补</div><figcaption>雪原 · 无尽的向上之路</figcaption></figure>
+        <figure class="shot"><div class="ph">截图待补</div><figcaption>层叠废墟 · 城层的垂直剖面</figcaption></figure>
+        <figure class="shot"><div class="ph">截图待补</div><figcaption>营地 · 火光与夜晚</figcaption></figure>
+        <figure class="shot"><div class="ph">截图待补</div><figcaption>履带摩托 · 唯一的座驾</figcaption></figure>
+      </div>
+      <p class="hint">截图放 <code>assets/shots/</code>，把 <code>&lt;div class="ph"&gt;</code> 换成 <code>&lt;img src="..."&gt;</code> 即可（已按 16:9 裁切）。</p>
+    </div>
+  </section>
+
+  <!-- 开发进度 -->
+  <section id="roadmap" class="section">
+    <div class="wrap">
+      <h2><span class="idx">04</span>开发进度</h2>
+      <ul class="roadmap">
+        <li class="now">
+          <span class="st">S0</span>
+          <span class="rm-title">地基</span>
+          <span class="rm-desc">工程与包 · Git + LFS · Core 四件套 · Boot 场景 · 测试跑通</span>
+          <span class="rm-st">进行中</span>
+        </li>
+        <li>
+          <span class="st">S1</span>
+          <span class="rm-title">一个人走路</span>
+          <span class="rm-desc">开局选角 · 输入 · 移动与相机 · 交互原型</span>
+          <span class="rm-st">计划</span>
+        </li>
+        <li>
+          <span class="st">S2</span>
+          <span class="rm-title">同伴</span>
+          <span class="rm-desc">另一名少女接入 · 跟随与编队 · 首个协作动作 · 情境闲聊</span>
+          <span class="rm-st">计划</span>
+        </li>
+        <li>
+          <span class="st">S3</span>
+          <span class="rm-title">一天</span>
+          <span class="rm-desc">背包 / 拾荒 / 需求 / 营火 / 昼夜 / 天气 / 日记 / 存档（垂直切片）</span>
+          <span class="rm-st">计划</span>
+        </li>
+        <li>
+          <span class="st">S4</span>
+          <span class="rm-title">一辆车</span>
+          <span class="rm-desc">履带摩托驾驶 · 上下车 · 燃料 · 双人座位 · 相机切换</span>
+          <span class="rm-st">计划</span>
+        </li>
+        <li>
+          <span class="st">S5</span>
+          <span class="rm-title">危险遗迹</span>
+          <span class="rm-desc">自律机器 · 武器简版 · 伤害与撤退 · 风险站点战利品</span>
+          <span class="rm-st">计划</span>
+        </li>
+        <li>
+          <span class="st">S6</span>
+          <span class="rm-title">第一章</span>
+          <span class="rm-desc">场景与叙事按原作顺序 · 广播 · 环境氛围 · VFX</span>
+          <span class="rm-st">计划</span>
+        </li>
+        <li>
+          <span class="st">S7</span>
+          <span class="rm-title">打磨与发布</span>
+          <span class="rm-desc">设置 · 本地化 · 性能 · 打包</span>
+          <span class="rm-st">计划</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 更新日志 -->
+  <section id="changelog" class="section">
+    <div class="wrap">
+      <h2><span class="idx">05</span>更新日志</h2>
+      <ul class="log">
+        <li>
+          <div class="log-head"><span class="ver">v0.3</span><span class="date">2026-10-16</span></div>
+          <p>结构微调：移除「废墟是博物馆」支柱，设计支柱收敛为三条；战斗立场措辞随之调整为「支柱 2 的极端形态」。</p>
+        </li>
+        <li>
+          <div class="log-head"><span class="ver">v0.2</span><span class="date">2026-10-16</span></div>
+          <p>项目重写版结构定稿：技术栈（Unity 6000 + URP + Cinemachine 3）、开局选角 + AI 同伴路线，战斗定位为「可选风险层」。</p>
+        </li>
+        <li>
+          <div class="log-head"><span class="ver">v0.1</span><span class="date">2026-10-16</span></div>
+          <p>方向拍板：确立四条设计支柱与核心循环，从零设计框架。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download" class="section">
+    <div class="wrap">
+      <h2><span class="idx">06</span>下载</h2>
+      <p class="hint" style="margin-top:0">本作<strong>暂未发行</strong>，下载将在正式发布后开放。</p>
+      <div class="grid downloads">
+        <div class="dl-card">
+          <h3>Windows</h3>
+          <p class="muted">PC · Windows 10 / 11 · 64 位</p>
+          <p class="meta">暂未发行</p>
+          <span class="btn is-disabled">暂未发行</span>
+        </div>
+        <div class="dl-card">
+          <h3>Steam</h3>
+          <p class="muted">商店页筹备中</p>
+          <p class="meta">暂未发行</p>
+          <span class="btn is-disabled">暂未发行</span>
+        </div>
+        <div class="dl-card">
+          <h3>更多平台</h3>
+          <p class="muted">macOS / 主机 · 后续评估</p>
+          <p class="meta">暂未发行</p>
+          <span class="btn is-disabled">暂未发行</span>
         </div>
       </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">最新文章</h2>
-      <div id="posts-list" class="post-list"></div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> 落星的博客 · 落星_meteor ·
-        <a href="https://space.bilibili.com/3632300612913675" target="_blank" rel="noopener">B 站</a>
+      <p class="disclaimer">
+        本作为《少女终末旅行》的<strong>非官方同人作品</strong>，仅供个人交流与学习，请勿用于商业用途。
+        原作版权归其版权方所有。
       </p>
     </div>
-  </footer>
+  </section>
 
-  <script src="assets/data.js"></script>
-  <script src="assets/app.js"></script>
+  <!-- 加入我们 -->
+  <section id="join" class="section">
+    <div class="wrap">
+      <h2><span class="idx">07</span>加入我们</h2>
+      <p class="hint" style="margin-top:0">欢迎加入项目组交流群，一起讨论、测试与反馈。</p>
+      <div class="join-card">
+        <div>
+          <p class="join-label">项目组群 · QQ</p>
+          <p class="join-no">251164839</p>
+        </div>
+        <button class="btn" data-copy="251164839" type="button">复制群号</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="blog/about.html">联系我们</a> · <a href="#join">加入我们</a> · 项目组群 QQ：251164839</p>
+    <p class="muted">本作为《少女终末旅行》的非官方同人作品，仅供个人交流与学习，请勿用于商业用途；原作版权归其版权方所有。</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var text = btn.getAttribute("data-copy");
+    var old = btn.textContent;
+    function done() {
+      btn.textContent = "已复制 ✓";
+      setTimeout(function () { btn.textContent = old; }, 1500);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+});
+</script>
+
 </body>
 </html>

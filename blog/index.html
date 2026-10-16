@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>落星的博客</title>
+<meta name="description" content="欢迎来到落星的博客，记录文章，也发布我做的东西。">
+<link rel="icon" href="assets/avatar.jpg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-avatar" src="assets/avatar.jpg" alt="">
+        落星的博客
+      </a>
+      <nav class="nav">
+        <a href="../index.html">首页</a>
+        <a href="index.html" class="active">文章</a>
+        <a href="downloads.html">下载</a>
+        <a href="about.html">关于</a>
+        <a href="admin.html" class="write-link">✎ 写文章</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img class="avatar" src="assets/avatar.jpg" alt="落星_meteor 的头像">
+      <div class="hero-text">
+        <h1>欢迎来到落星的博客</h1>
+        <p>我是 <span class="accent">落星_meteor</span>，这里记录我的文章与随笔，也发布我做的各种小东西，都可以直接下载。</p>
+        <div class="hero-actions">
+          <a class="btn" href="downloads.html">去下载 ↓</a>
+          <a class="btn ghost" href="about.html">关于我</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">最新文章</h2>
+      <div id="posts-list" class="post-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 落星的博客 · 落星_meteor ·
+        <a href="https://space.bilibili.com/3632300612913675" target="_blank" rel="noopener">B 站</a>
+      </p>
+      <p class="muted">项目组群 QQ：<strong>251164839</strong>（加入我们）</p>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
